@@ -1,5 +1,5 @@
 # Southern New Hampshire University
-## <center>Computer Science Capstone<center>
+# Computer Science Capstone
 #### CODE REVIEW
 ## <center>ARTIFACTS<center>
 #### MILESTONE 1: Software Engineering and Design
