@@ -1,2 +1,2 @@
 # Southern New Hampshire University
-## <center>Computer Science Capstone
+## <center>Computer Science Capstone<center>
