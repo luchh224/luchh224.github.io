@@ -1,5 +1,6 @@
 # Southern New Hampshire University <br> Computer Science Capstone
 ## <center>CODE REVIEW<center>
+Click here to view the original reviewed code
 ## <center>ARTIFACTS<center>
 #### ARTIFACT 1: Software Engineering and Design
 #### ARTIFACT 2: Algorithms and Data Structures
