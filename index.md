@@ -2,7 +2,7 @@
 ## <center>Table of Contents
 Click a link to jump to that section! <br>
 1. [Professional Self Assesment](#psa)
-2. Code Review
+2. [Code Review](#cr)
 3. Artifacts
     1. Artifact 1: Software Design and Engineer
     2. Artifact 2: Algorithms and Data Structures
@@ -20,6 +20,7 @@ I was also able to gain significant knowledge in team collaboration, stakeholder
 <br>
 I look forward to the next chapter of my education and learning experience as I know that my journey has just begun in the Computer Science world. My time these pasts years at South New Hampshire University has given me the tools to start, succeed, and excel in any industry I find myself in. <br>
 
+<a name="CR"><a/>
 ## <center>CODE REVIEW<center>
 A code review is one of the most important aspects of development. Code reviews are designed to identify bugs, increase code quality, and help developers learn the source code. On top of this, it is also a stage that promotes team collaboration. New ideas, suggestions, or possible solutions to problems can all be brought up during these reviews. This ensures that the direction of the project has a clear path toward success. <br>
 ***Click [here](https://youtu.be/XGRvyJ8Ayr0) to view my code review***
