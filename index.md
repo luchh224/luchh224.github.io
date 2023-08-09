@@ -1,6 +1,5 @@
 # Southern New Hampshire University <br> Computer Science Capstone
 ## <center>Table of Contents
-Click a link to jump to that section! <br>
 1. Professional Self Assesment
 2. Code Review
 3. Artifacts
