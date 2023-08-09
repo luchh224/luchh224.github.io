@@ -6,7 +6,7 @@ For the first articfact of this project, I chose to enchance my layout and overa
 <br> 
 
 Below is an example of the old main screen (left) and new main screen (right) in order to showcase the improved design <br>
-<img src="OldMain.PNG" height=500 width=300> <img src="NewMain.PNG" height=500 width=300> <br>
+<img src="OldMain.png" height=500 width=300> <img src="NewMain.png" height=500 width=300> <br>
 Click [here](https://github.com/luchh224/luchh224.github.io/tree/main/Weight%20Loss%20App/Code%20Review/Layouts) to view the original layout files <br> 
 Click [here](https://github.com/luchh224/luchh224.github.io/tree/main/Weight%20Loss%20App/Layouts) to view the enchanced layout files 
 #### ARTIFACT 2: Algorithms and Data Structures
