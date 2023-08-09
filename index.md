@@ -8,7 +8,7 @@ Click a link to jump to that section! <br>
     2. Artifact 2: Algorithms and Data Structures
     3. Artifact 3: Databases
 
-<a name="PSE">
+<a name="PSE"><a/>
 ## <center>Professional Self Assesment<center>
 It has been a very long road for me in my journey as a Computer Science Major at Southern New Hampshire University, but I have finally made it to the end. The Computer Science program has broadened my skillset as a problem solver, a developer, a critical thinker, and most importantly as a future computer science professional. <br>
 <br>
