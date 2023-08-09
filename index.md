@@ -4,9 +4,9 @@ Click a link to jump to that section! <br>
 1. [Professional Self Assesment](#pse)
 2. Code Review
 3. Artifacts
-    1. Artifact 1: Software Design and Engineer
-    2. Artifact 2: Algorithms and Data Structures
-    3. Artifact 3: Databases
+    Artifact 1: Software Design and Engineer
+    Artifact 2: Algorithms and Data Structures
+    Artifact 3: Databases
 
 <a name="PSE"></a>
 ## <center>Professional Self Assesment<center>
