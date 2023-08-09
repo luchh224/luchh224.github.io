@@ -39,4 +39,28 @@ While the overall scene is not going to change, the structure with which I write
 #### ARTIFACT 3: Databases
 For the final artifact of the project, my goal was to create two separate databases for the weight loss application that I had started in a previous course. The first database was created in order to add user accounts to it on the register screen of the application. This screen would need to be accessed if there was no user account in the database for that particular username and password.  The second database was going to be used while in the application and needed to house the weight and date information for the user that was logged in. I decided to use two databases for this instead of one inside of another because it was easier to modify the databases as I developed them.  The hardest part about creating these databases was keeping track of all of the variables needed for all of the different methods that I created. In order to track all that was going on, I created an Excel spreadsheet that had my variables for each different Java class as well as where it would link to within the database versus the Java classes they were created for. <br>
 ***Click [here](https://github.com/luchh224/luchh224.github.io/tree/main/Weight%20Loss%20App/Databases) to view the enhanced database files*** 
+## <center>OUTCOMES<center>
+The 5 outcomes that I was striving to achieve during this final project are: <br>
+<br>
+    1. Strategies for building collaborative environments that enable diverse audiences to support organizational decision-making in the field of computer science. <br> 
+    <br>
+    2. Design, develop, and deliver professional-quality oral, written, and visual communications that are coherent, technically sound, and appropriately adapted to specific audiences and contexts. <br> 
+    <br>
+    3. Design and evaluate computing solutions that solve a given problem using algorithmic principles and computer science practices and standards appropriate to its solution, while managing the trade-offs involved in design choices. <br> 
+    <br>
+    4. Demonstrate an ability to use well-founded and innovative techniques, skills, and tools in computing practices for the purpose of implementing computer solutions that deliver value and accomplish industry-specific goals. <br> 
+    <br>
+    5. Develop a security mindset that anticipates adversarial exploits in software architecture and designs to expose potential vulnerabilities, mitigate design flaws, and ensure privacy and enhanced security of data and resources. <br> 
+    <br>
+All of these outcomes have been showcased throughout my ePortfolio in the following ways: <br>
+<br>
+    1. Properly notating all entries within the code to ensure that other developers can understand and build upon the goal of the code. This also includes notating proper changes to pull requests so that other team members can see how it integrates into the larger project at hand as well as have insight as to why a change or new design was implemented.<br>
+<br>
+    2. The content of the application I have been developing has been presented in a way where it is coherent as well as easy to follow and understand. All content within the application has been thought out to be as user-friendly as possible while also sticking to the overall simplicity of the application itself. It is straightforward without leaving out any areas that may be confusing or prompts written in a way where the user would not understand the purpose of each element. <br>
+<br>
+    3. I was able to take a past project in the form of a 3D scene and enhance it in a way where I accomplished two things at the same time. The first accomplishment was to scale back code while also maintaining its purpose so that when the program runs the code is more efficient thus leading to less resources needed to run the application. The second accomplishment was to scale back just how much code was needed in order to run the application. Originally there were 284 lines of code needed in order to shape the 3D objects. With the improvement, there are now only XX lines of code needed in order to shape the 3D objects.<br>
+<br>
+    4. This outcome was best showcased when working on my databases for the weight tracker application. In it, I demonstrated a very non-nonsense approach the building a database where it was both functional and efficient. The databases also work seamlessly with the user’s input leading to the overall outcome of a properly working database.<br>
+<br>
+    5. This outcome was also showcased with the databases that I developed, as well as elements of the user end of the application. From a database standpoint, all of the information that the user was entering was held solely on the application without any need to hold this information elsewhere such as the cloud. The information that the user entered, such as phone number, email, and name were all held in a local database that could only be called from the app itself. Likewise with my user-facing portion of the login and register screen, the password entries that the user inputs were blocked out as to not be showcased like the rest of the login information. 
 
