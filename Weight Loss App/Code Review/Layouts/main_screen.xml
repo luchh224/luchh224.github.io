@@ -3,78 +3,88 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-    <!-- Prompt to instruct user what to do-->
-    <TextView
-        android:id="@+id/welcomeBanner2"
-        android:layout_width="244dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="83dp"
-        android:layout_marginTop="164dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginBottom="506dp"
-        android:accessibilityHeading="false"
-        android:fontFamily="sans-serif-black"
-        android:gravity="center"
-        android:text="@string/select_above"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/YesterdaysWeight"
+        android:layout_width="211dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="629dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Yesterdays Weight"
         android:textAlignment="center"
-        android:textColor="#7D2AF1"
-        android:textSize="18sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <!-- Top banner. May change to something better-->
-    <TextView
-        android:id="@+id/welcomeBanner"
-        android:layout_width="244dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="92dp"
-        android:layout_marginEnd="67dp"
-        android:layout_marginBottom="591dp"
-        android:accessibilityHeading="false"
-        android:fontFamily="sans-serif-black"
-        android:gravity="center"
-        android:text="@string/welcome_banner"
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/TodaysWeightInput"
+        android:layout_width="211dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="566dp"
+        android:ems="10"
+        android:hint="Enter Todays weight"
         android:textAlignment="center"
-        android:textColor="#7D2AF1"
-        android:textSize="18sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-    <!-- Top Toolbar-->
-    <Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/DatePopulate"
+        android:layout_width="211dp"
         android:layout_height="56dp"
-        android:layout_weight="0"
-        android:background="@color/purple_4"
-        android:title="@string/app_name"
-        android:titleTextColor="@color/white"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="183dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="503dp"
+        android:ems="10"
+        android:inputType="date"
+        android:text="Date"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-        <!-- Button within the toolbar. Reference for use to move to the
-        delete delete_screen-->
-        <ImageButton
-            android:id="@+id/button_delete"
-            android:layout_width="40dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="end"
-            android:background="@color/purple_4"
-            android:onClick="deleteRecordOnClick"
-            android:paddingRight="0dp"
-            android:paddingLeft="0dp"
-            android:contentDescription="@string/delete_record"
-            app:srcCompat="@drawable/trash_white"
-            tools:layout_editor_absoluteX="371dp" />
-    </Toolbar>
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/CalculatePoundsToGoal"
+        android:layout_width="211dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="317dp"
+        android:layout_marginBottom="369dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="Pounds to Goal"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/DisplayStartWeight"
+        android:layout_width="211dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="248dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="438dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="Starting Weight"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
