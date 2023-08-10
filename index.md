@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Southern New Hampshire University <br> Computer Science Capstone
 ## <center>Professional Self Assesment<center>
 It has been a very long road for me in my journey as a Computer Science Major at Southern New Hampshire University, but I have finally made it to the end. The Computer Science program has broadened my skillset as a problem solver, a developer, a critical thinker, and most importantly as a future computer science professional. <br>
