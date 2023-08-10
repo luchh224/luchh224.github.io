@@ -1,9 +1,4 @@
----
-layout: default
----
-
-# Southern New Hampshire University <br> Computer Science Capstone
-## <center>Professional Self Assesment<center>
+# <center>Professional Self Assesment<center>
 It has been a very long road for me in my journey as a Computer Science Major at Southern New Hampshire University, but I have finally made it to the end. The Computer Science program has broadened my skillset as a problem solver, a developer, a critical thinker, and most importantly as a future computer science professional. <br>
 <br>
 Developing my ePortfolio gave me time to think back on how I got to where I am now. I have always felt that one of my biggest strengths when it comes to computer science is being well-organized. When you are working on complex projects or even smaller quick tasks, you need to have a plan of action. For me, starting small was the best way to approach any computer science project, especially when it came to projects that were built using unfamiliar IDEs. This is how I approached my ePortfolio, and I think its final state is one to be proud of. <br>
