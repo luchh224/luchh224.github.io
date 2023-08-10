@@ -26,8 +26,39 @@ Below is an example of the old main screen (Top) and new main screen (Bottom) in
 #### ARTIFACT 2: Algorithms and Data Structures
 The algorithm and data structures artifact is one that made me dig deeper into my past classes to find a project that was working but could use a boost in efficiency. I decided to use a lower-level OpenGL scene that I created in my CS-330 Computational Graphics and Visualization class. The scene consists of a desk, walls, and a computer monitor on top of the desk, all created using 2D coordinates that when combined together made a 3D scene complete with camera positions that can be moved and changed using your mouse and WASD keys. Below is a screenshot of my original 3D scene. <br>
 <img src="Scene.png" height=300 width=500> <br>
-While the overall scene is not going to change, the structure with which I write and implement the code will change. As mentioned above, each element of the scene is created using 2D planes, with each plane having 2 triangles within it to create 4 sides. Each triangle will be sharing 2 coordinates in order to join them together to create the effect of a 4-sided rectangle. My goal is to scrub and rewrite the code so that the objects can be created using the intended shape instead of being shaped using only triangles. While the original code works and does represent the shapes that I would like them to represent, the efficiency with which the program runs and renders can be cut in half which would also create a more efficient coding experience as there will be less time aligning and positioning hundreds of coordinates throughout the scene. <br>
-***Click [here](https://github.com/luchh224/luchh224.github.io/blob/main/OpenGl%20/OldCode.cpp) to view the original .cpp file***<br> ***Lines 361 - 645 are exclusive to the building blocks of the scene***
+While the overall scene is not going to change other than colors, the structure with which I write and implement the code will change. As mentioned above, each element of the scene is created using 2D planes, with each plane having 2 triangles within it to create 4 sides. Each triangle in the original code shared 2 of the same X, Y, and X coordinates out of 6 total coordinates, leading to the redundancy of coordinates that were already called out. My goal is to scrub and rewrite the code so that the objects can be created using the individual coordinates once instead of twice. While the original code works and does represent the shapes that I would like them to represent, the efficiency with which the program runs and renders can be cut down significantly which would also create a more efficient coding experience as there will be less time aligning and positioning hundreds of coordinates throughout the scene. The scene will still be created using triangles, but using the method GLushort indices[], it will allow me to call each coordinate of the scene, like the corners of each rectangle, and then call these corners to form triangles and eventually rectangles. Instead of needing 3 coordinates per triangle, which tally to 6 coordinates for a rectangle, I was able to enhance the code so that each triangle still uses 3 coordinates, but instead of having one coordinate per line, all three coordinates are on one line, calling them back to the GLfloat verts[] method instead, which is where the coordinates originate from. <br>
+<br>
+Below are inline entries of the original code versus the enhanced code. As you can see, the points or coordinates on the enhanced code are only called out once, with both a letter and number being assigned to it for tracking purposes. From there, the triangle is built using the assigned number coordinates. Implementing this change allowed my UCreateMesh method to go from 283 lines of code to 128 lines of code, a reduction of 155 lines. This allows me to not only write the code more efficiently but allows the program to render the scene quicker as well.<br>
+
+<code>   
+    
+         //Left Wall
+         -2.5f, 1.5f, 1.0f,    0.941f, 1.0f, 0.941f, 1.0f,
+         -2.5f, 1.5f,-0.6f,    0.941f, 1.0f, 0.941f, 1.0f,
+         -2.5f,-1.5f,-0.6f,    0.941f, 1.0f, 0.941f, 1.0f,
+         -2.5f, 1.5f, 1.0f,    0.941f, 1.0f, 0.941f, 1.0f,
+         -2.5f,-1.5f,-0.6f,    0.941f, 1.0f, 0.941f, 1.0f,
+         -2.5f,-1.5f, 1.0f,    0.941f, 1.0f, 0.941f, 1.0f,
+
+         //Back Wall
+         2.5f, 1.5f, 1.0f,     0.941f, 1.0f, 0.941f, 1.0f,
+         2.5f, 1.5f,-0.6f,     0.941f, 1.0f, 0.941f, 1.0f,
+        -2.5f, 1.5f,-0.6f,     0.941f, 1.0f, 0.941f, 1.0f,
+         2.5f, 1.5f, 1.0f,     0.941f, 1.0f, 0.941f, 1.0f,
+        -2.5f, 1.5f,-0.6f,     0.941f, 1.0f, 0.941f, 1.0f,
+        -2.5f, 1.5f, 1.0f,     0.941f, 1.0f, 0.941f, 1.0f,
+
+         //Right Wall
+         2.5f,-1.5f, 1.0f,     0.941f, 1.0f, 0.941f, 1.0f,
+         2.5f,-1.5f,-0.6f,     0.941f, 1.0f, 0.941f, 1.0f,
+         2.5f, 1.5f,-0.6f,     0.941f, 1.0f, 0.941f, 1.0f,
+         2.5f,-1.5f, 1.0f,     0.941f, 1.0f, 0.941f, 1.0f,
+         2.5f, 1.5f,-0.6f,     0.941f, 1.0f, 0.941f, 1.0f,
+         2.5f, 1.5f, 1.0f,     0.941f, 1.0f, 0.941f, 1.0f,
+<code>
+
+***Click [here](https://github.com/luchh224/luchh224.github.io/blob/main/OpenGl%20/OldCode.cpp) to view the original .cpp file***<br> ***Lines 364 - 644 are exclusive to the building blocks of the scene***
+***Click [here](https://github.com/luchh224/luchh224.github.io/blob/main/OpenGl%20/NewCode.cpp) to view the enhanced .cpp file***<br> ***Lines 361 - 503 are exclusive to the building blocks of the scene***
 #### ARTIFACT 3: Databases
 For the final artifact of the project, my goal was to create two separate databases for the weight loss application that I had started in a previous course. The first database was created in order to add user accounts to it on the register screen of the application. This screen would need to be accessed if there was no user account in the database for that particular username and password.  The second database was going to be used while in the application and needed to house the weight and date information for the user that was logged in. I decided to use two databases for this instead of one inside of another because it was easier to modify the databases as I developed them.  The hardest part about creating these databases was keeping track of all of the variables needed for all of the different methods that I created. In order to track all that was going on, I created an Excel spreadsheet that had my variables for each different Java class as well as where it would link to within the database versus the Java classes they were created for. <br>
 Below you will find images of what both of the databases look like. Using DBbroswer, I am able to extract the created database from the application and open it to view. On creation of the database, this is the data that is created for users to input information into. Note that there is test information within the database for the Weight information that includes dates and weights. <br> 
