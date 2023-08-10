@@ -28,10 +28,9 @@ The algorithm and data structures artifact is one that made me dig deeper into m
 <img src="Scene.png" height=300 width=500> <br>
 While the overall scene is not going to change other than colors, the structure with which I write and implement the code will change. As mentioned above, each element of the scene is created using 2D planes, with each plane having 2 triangles within it to create 4 sides. Each triangle in the original code shared 2 of the same X, Y, and X coordinates out of 6 total coordinates, leading to the redundancy of coordinates that were already called out. My goal is to scrub and rewrite the code so that the objects can be created using the individual coordinates once instead of twice. While the original code works and does represent the shapes that I would like them to represent, the efficiency with which the program runs and renders can be cut down significantly which would also create a more efficient coding experience as there will be less time aligning and positioning hundreds of coordinates throughout the scene. The scene will still be created using triangles, but using the method GLushort indices[], it will allow me to call each coordinate of the scene, like the corners of each rectangle, and then call these corners to form triangles and eventually rectangles. Instead of needing 3 coordinates per triangle, which tally to 6 coordinates for a rectangle, I was able to enhance the code so that each triangle still uses 3 coordinates, but instead of having one coordinate per line, all three coordinates are on one line, calling them back to the GLfloat verts[] method instead, which is where the coordinates originate from. <br>
 <br>
-Below are inline entries of the original code versus the enhanced code. As you can see, the points or coordinates on the enhanced code are only called out once, with both a letter and number being assigned to it for tracking purposes. From there, the triangle is built using the assigned number coordinates. Implementing this change allowed my UCreateMesh method to go from 283 lines of code to 128 lines of code, a reduction of 155 lines. This allows me to not only write the code more efficiently but allows the program to render the scene quicker as well.<br>
+Below are inline entries of the original code (top) versus the enhanced code (bottom). As you can see, the points or coordinates on the enhanced code are only called out once, with both a letter and number being assigned to it for tracking purposes. From there, the triangle is built using the assigned number coordinates. Implementing this change allowed my UCreateMesh method to go from 283 lines of code to 128 lines of code, a reduction of 155 lines. This allows me to not only write the code more efficiently but allows the program to render the scene quicker as well.<br>
 
-<code>   
-    
+```   
          //Left Wall
          -2.5f, 1.5f, 1.0f,    0.941f, 1.0f, 0.941f, 1.0f,
          -2.5f, 1.5f,-0.6f,    0.941f, 1.0f, 0.941f, 1.0f,
@@ -55,8 +54,158 @@ Below are inline entries of the original code versus the enhanced code. As you c
          2.5f,-1.5f, 1.0f,     0.941f, 1.0f, 0.941f, 1.0f,
          2.5f, 1.5f,-0.6f,     0.941f, 1.0f, 0.941f, 1.0f,
          2.5f, 1.5f, 1.0f,     0.941f, 1.0f, 0.941f, 1.0f,
-<code>
+```
 
+``` 
+        // Vertex Positions    // Colors (r,g,b,a)
+        // These are all points to form the desk top, as well as the individual points for the towwers that house the drawers
+         1.0f,  0.5f, 0.0f,   0.545f, 0.271f, 0.075f, 1.0f, // Point A = 0
+         1.0f, -0.5f, 0.0f,   0.545f, 0.271f, 0.075f, 1.0f, // Point B = 1
+        -1.0f, -0.5f, 0.0f,   0.545f, 0.271f, 0.075f, 1.0f, // Point C = 2
+        -1.0f,  0.5f, 0.0f,   0.545f, 0.271f, 0.075f, 1.0f, // Point D = 3
+
+        -1.0f,  0.5f,  0.2f,  0.545f, 0.271f, 0.075f, 1.0f, // Point E = 4
+         1.0f,  0.5f,  0.2f,  0.545f, 0.271f, 0.075f, 1.0f, // Point F = 5
+        -1.0f, -0.5f,  0.2f,  0.545f, 0.271f, 0.075f, 1.0f, // Point G = 6
+         1.0f, -0.5f,  0.2f,  0.545f, 0.271f, 0.075f, 1.0f, // Point H = 7
+
+        -1.0f, -0.5f, -0.6f,  1.0f,   0.0f,   0.0f,   1.0f, // Point I = 8
+        -0.5f, -0.5f, -0.6f,  1.0f,   0.0f,   0.0f,   1.0f, // Point J = 9
+        -1.0f,  0.5f, -0.6f,  1.0f,   0.0f,   0.0f,   1.0f, // Point K = 10
+        -0.5f,  0.5f, -0.6f,  1.0f,   0.0f,   0.0f,   1.0f, // Point L = 11
+
+        -0.5f, -0.5f,  0.0f,  1.0f,   1.0f,   0.0f,   1.0f, // Point M = 12
+        -0.5f,  0.5f,  0.0f,  1.0f,   1.0f,   0.0f,   1.0f, // Point N = 13
+         0.5f,  0.5f,  0.0f,  1.0f,   1.0f,   0.0f,   1.0f, // Point O = 14
+         0.5f, -0.5f,  0.0f,  1.0f,   1.0f,   0.0f,   1.0f, // Point P = 15
+
+         0.5f, -0.5f, -0.6f,  1.0f,   1.0f,   1.0f,   1.0f, // Point Q = 16
+         0.5f,  0.5f, -0.6f,  1.0f,   1.0f,   1.0f,   1.0f, // Point R = 17
+         1.0f, -0.5f, -0.6f,  1.0f,   1.0f,   1.0f,   1.0f, // Point S = 18
+         1.0f,  0.5f, -0.6f,  1.0f,   1.0f,   1.0f,   1.0f, // Point T = 19
+
+         //These are all points that will form the walls and floor
+        -2.5f,  1.5f, -0.6f,  0.980f, 0.922f, 0.843f, 1.0f, // Point U = 20
+        -2.5f, -1.5f, -0.6f,  0.980f, 0.922f, 0.843f, 1.0f, // Point V = 21
+         2.5f, -1.5f, -0.6f,  0.980f, 0.922f, 0.843f, 1.0f, // Point W = 22
+         2.5f,  1.5f, -0.6f,  0.980f, 0.922f, 0.843f, 1.0f, // Point X = 23
+
+        -2.5f,  1.5f,  1.0f,  0.941f, 1.0f, 0.941f, 1.0f, // Point A1 = 24
+        -2.5f, -1.5f,  1.0f,  0.941f, 1.0f, 0.941f, 1.0f, // Point B1 = 25
+         2.5f,  1.5f,  1.0f,  0.941f, 1.0f, 0.941f, 1.0f, // Point C1 = 26
+         2.5f, -1.5f,  1.0f,  0.941f, 1.0f, 0.941f, 1.0f, // Point D1 = 27
+
+         //These are all points that will form the drawer faces
+        -0.95f,-0.5f,-0.09f,  0.627f, 0.322f, 0.176f, 1.0f, // Point E1 = 28
+        -0.95f,-0.5f, -0.2f,  0.627f, 0.322f, 0.176f, 1.0f, // Point F1 = 29
+        -0.55f,-0.5f, -0.2f,  0.627f, 0.322f, 0.176f, 1.0f, // Point G1 = 30
+        -0.55f,-0.5f,-0.09f,  0.627f, 0.322f, 0.176f, 1.0f, // Point H1 = 31
+
+        -0.95f,-0.5f,-0.25f,  0.627f, 0.322f, 0.176f, 1.0f, // Point I1 = 32
+        -0.55f,-0.5f,-0.25f,  0.627f, 0.322f, 0.176f, 1.0f, // Point J1 = 33
+        -0.95f,-0.5f,-0.36f,  0.627f, 0.322f, 0.176f, 1.0f, // Point K1 = 34
+        -0.55f,-0.5f,-0.36f,  0.627f, 0.322f, 0.176f, 1.0f, // Point L1 = 35
+
+        -0.55f,-0.5f,-0.41f,  0.627f, 0.322f, 0.176f, 1.0f, // Point M1 = 36
+        -0.55f,-0.5f,-0.52f,  0.627f, 0.322f, 0.176f, 1.0f, // Point N1 = 37
+        -0.95f,-0.5f,-0.41f,  0.627f, 0.322f, 0.176f, 1.0f, // Point O1 = 38
+        -0.95f,-0.5f,-0.52f,  0.627f, 0.322f, 0.176f, 1.0f, // Point P1 = 39
+
+         0.95f,-0.5f,-0.09f,  0.627f, 0.322f, 0.176f, 1.0f, // Point Q1 = 40
+         0.55f,-0.5f,-0.09f,  0.627f, 0.322f, 0.176f, 1.0f, // Point R1 = 41
+         0.55f,-0.5f, -0.2f,  0.627f, 0.322f, 0.176f, 1.0f, // Point S1 = 42
+         0.95f,-0.5f, -0.2f,  0.627f, 0.322f, 0.176f, 1.0f, // Point T1 = 43
+
+         0.55f,-0.5f,-0.25f,  0.627f, 0.322f, 0.176f, 1.0f, // Point U1 = 44
+         0.55f,-0.5f,-0.36f,  0.627f, 0.322f, 0.176f, 1.0f, // Point V1 = 45
+         0.95f,-0.5f,-0.25f,  0.627f, 0.322f, 0.176f, 1.0f, // Point W1 = 46
+         0.95f,-0.5f,-0.36f,  0.627f, 0.322f, 0.176f, 1.0f, // Point Z1 = 47
+
+         0.95f,-0.5f,-0.41f,  0.627f, 0.322f, 0.176f, 1.0f, // Point A2 = 48
+         0.95f,-0.5f,-0.52f,  0.627f, 0.322f, 0.176f, 1.0f, // Point B2 = 49
+         0.55f,-0.5f,-0.41f,  0.627f, 0.322f, 0.176f, 1.0f, // Point C2 = 50
+         0.55f,-0.5f,-0.52f,  0.627f, 0.322f, 0.176f, 1.0f, // Point D2 = 51
+
+    };
+
+    // Index data to share position data
+    GLushort indices[] = {
+        //These points will create the desktop into a 3D piece. All sides will be brown
+        0, 1, 2,   // Triangle 1
+        2, 3, 0,   // Triangle 2
+        4, 5, 7,  //  Triangle 3
+        4, 6, 7,   // Triangle 4
+        0, 7, 1,   // Triangle 5
+        7, 0, 5,   // Triangle 6
+        4, 2, 3,   // Triangle 7
+        4, 2, 6,   // Triangle 8
+        6, 1, 2,   // Triangle 9
+        6, 1, 7,   // Triangle 10
+        5, 3, 0,   // Triangle 11
+        5, 3, 4,   // Triangle 12
+
+        //These points will create the desk towers for the drawers
+        //These points are for the right tower
+        1, 19, 18, // Triangle 13
+        1, 19, 0,  // Triangle 14
+        14, 15, 16,// Triangle 15
+        14, 16, 17,// Triangle 16
+        17, 19, 18,// Triangle 17
+        17, 18, 16,// Triangle 18
+        0, 17, 14, // Triangle 19
+        0, 17, 19, // Triangle 20
+        15, 18, 16,// Triangle 21
+        15, 18, 1, // Triangle 22
+
+        //These point are for the left tower
+        2, 9, 8,   // Triangle 23
+        2, 9, 12,  // Triangle 24
+        3, 8, 10,  // Triangle 25
+        3, 8, 2,   // Triangle 26
+        13, 10, 3, // Triangle 27
+        13, 10, 11,// Triangle 28
+        13, 9, 10, // Triangle 29
+        12, 13, 9, // Triangle 30
+        10, 9, 11, // Triangle 31
+        10, 9, 8,  // Triangle 32
+
+        //These points are for floor
+        22, 21, 20,// Triangle 33
+        20, 22, 23,// Triangle 34
+
+        //These points are for the walls
+        //These points are for the left wall
+        25, 20, 21,// Triangle 35
+        25, 20, 24,// Triangle 36
+
+        //These points are for the back wall
+        24, 23, 20,// Triangle 37
+        24, 23, 26,// Triangle 38
+
+        //These points are for the right wall
+        27, 23, 26,// Triangle 39
+        27, 23, 22,// Triangle 40
+
+        //These points are for the drawers on the front face of the desk towers
+        //These points are the drawers on the right tower
+        41, 43, 42,// Triangle 41
+        41, 43, 40,// Triangle 42
+        44, 47, 45,// Triangle 43
+        44, 47, 46,// Triangle 44
+        50, 49, 51,// Triangle 45
+        50, 49, 48,// Triangle 46
+
+        //These points are the drawers on the left tower
+        28, 30, 29,// Triangle 47
+        28, 30, 31,// Triangle 48
+        32, 35, 34,// Triangle 49
+        32, 35, 34,// Triangle 50
+        38, 37, 36,// Triangle 51
+        38, 37, 39 // Triangle 52
+
+    };
+```
+    
 ***Click [here](https://github.com/luchh224/luchh224.github.io/blob/main/OpenGl%20/OldCode.cpp) to view the original .cpp file***<br> ***Lines 364 - 644 are exclusive to the building blocks of the scene***
 ***Click [here](https://github.com/luchh224/luchh224.github.io/blob/main/OpenGl%20/NewCode.cpp) to view the enhanced .cpp file***<br> ***Lines 361 - 503 are exclusive to the building blocks of the scene***
 #### ARTIFACT 3: Databases
